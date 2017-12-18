@@ -1,0 +1,17 @@
+create database se_assignment2;
+
+use se_assignment2;
+
+create table se_assignment2.user(
+registration_id int(20) primary key auto_increment,
+first_name varchar(30) not null,
+last_name varchar(30) not null,
+address varchar(200) not null,
+phone_number varchar(10) not null,
+email_address varchar(40) not null,
+username varchar(40) not null,
+password varchar(40) not null
+);
+
+
+select * from se_assignment2.user;

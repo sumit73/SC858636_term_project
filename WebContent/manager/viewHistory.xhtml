@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Assignment 2 - Stocks List </title>
+
+		<h:outputStylesheet library="css" name="bootstrap.css"  />
+<h:outputStylesheet library="css" name="main.css"  />
+		
+	
+</h:head>
+<h:body>
+<ui:include src="/WEB-INF/managerheader.xhtml" />
+
+ 	<div class="row">
+<div class="col-md-12 col-sm-12 col-lg-12" style="margin-top:20px; margin-left: 20px;">
+					
+                    <h:form>
+                        <label for="sel1">Stock: </label>
+                        <h:selectOneMenu id="symbol" value="#{stock.selectedSymbol}">
+                            <c:selectItems value="#{stock.availableStockSymbols}" />
+                        </h:selectOneMenu>
+
+
+					 <label for="sel1">Interval: </label>
+                        <h:selectOneMenu id="interval" value="#{stock.selectedInterval}">
+                            <c:selectItems value="#{stock.availableIntervals}" />
+                        </h:selectOneMenu>
+
+	 <h:commandButton value="view History" action="#{stock.viewHistory}" styleClass="btn btn-success" />
+	
+	
+	  <h:panelGroup rendered="#{not empty stock.table1Markup}">
+                    <h:outputText value="#{stock.table1Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+
+                <h:panelGroup rendered="#{not empty stock.table2Markup}">
+                    <h:outputText value="#{stock.table2Markup}" escape="false" styleClass="preformatted" />
+                </h:panelGroup>
+	
+                    </h:form>
+                </div>
+                
+                </div>
+
+
+
+</h:body>
+</html>

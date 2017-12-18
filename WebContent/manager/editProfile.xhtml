@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
+
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Assignment 2 - Register </title>
+
+		<h:outputStylesheet library="css" name="bootstrap.css"  />
+<h:outputStylesheet library="css" name="main.css"  />
+		
+	
+</h:head>
+
+	
+<h:body>
+
+
+<ui:include src="/WEB-INF/managerheader.xhtml" />
+
+
+<div class="container" style="max-width:600px;margin:60px auto;">
+
+	<div> <h3 style="text-align: center;">Edit Register  </h3></div>
+
+
+
+	<h:form id="editDetailsForm" style="box-sizing:border-box">
+	
+		<h:message for="userName" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	
+	
+ <div class="form-group">
+		<h:outputLabel for="firstName"  value="First Name "  style="width: 110px; display: inline-block; text-align: left;" />
+		<h:inputText id="firstName" value="#{register.firstName}" 
+		validator="#{registerValidator.validateFirstName}"  a:placeholder="First Name"  styleClass="form-control" >
+		 
+		<c:validator validatorId="registerValidator"  required="true" />
+		</h:inputText>
+		<br />
+		<h:message for="firstName" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>	
+		
+		
+	
+
+ <div class="form-group">
+		<h:outputLabel for="lastName"  value="Last Name "   style="width: 110px; display: inline-block; text-align: left;" />
+		<h:inputText id="lastName" value="#{register.lastName}" 
+		validator="#{registerValidator.validateLastName}"  a:placeholder="Last Name"  styleClass="form-control" >
+		 
+		<c:validator validatorId="registerValidator"  required="true" />
+		</h:inputText>
+		<br />
+		<h:message for="lastName" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>	
+		
+		
+	 <div class="form-group">	
+		<h:outputLabel for="address"  value="Address "   style="width: 110px; display: inline-block; text-align: left;" />
+		<h:inputText id="address" value="#{register.address}" 
+		validator="#{registerValidator.validateAddress}"  a:placeholder="P.O.Box 123"  styleClass="form-control" >
+		 
+		<c:validator validatorId="registerValidator"  required="true" />
+		</h:inputText>
+		<br />
+		<h:message for="address" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>	
+		
+		
+		
+	 <div class="form-group">
+	 	<h:outputLabel for="phoneNumber"  value="Phone Number"   style="width: 110px; display: inline-block; text-align: left;" />
+		<h:inputText id="phoneNumber" value="#{register.phoneNumber}" 
+		validator="#{registerValidator.validatePhoneNumber}"  a:placeholder="9999999999"  styleClass="form-control" >
+		 
+		<c:validator validatorId="registerValidator"  required="true" />
+		</h:inputText>
+		<br />
+		<h:message for="phoneNumber" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>	
+		
+		
+		
+		 <div class="form-group">
+		<h:outputLabel for="emailAddress"  value="Personal Email"   style="width:110px; display: inline-block; text-align: left;" />
+		<h:inputText id="emailAddress" value="#{register.emailAddress}" 
+		validator="#{registerValidator.validateEmail}"  a:placeholder="Email Address"  styleClass="form-control" >
+		 
+		<c:validator validatorId="registerValidator"  required="true" />
+		</h:inputText>
+		<br />
+		<h:message for="emailAddress" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>	
+		
+		
+		
+		
+		
+	 <div class="form-group">
+	 	<h:outputLabel for="userName"  value="Username"   style="width: 110px; display: inline-block; text-align: left;" />
+		<h:inputText id="userName" value="#{register.userName}" 
+		validator="#{registerValidator.validateUserName}"  a:placeholder="Username"  styleClass="form-control" >
+		 
+		<c:validator validatorId="registerValidator"  required="true" />
+		</h:inputText>
+		<br />
+		<h:message for="userName" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>	
+		
+		 <div class="form-group">
+		<h:outputLabel value="Password"   style="width:110px; display: inline-block; text-align: left;" />
+		<h:inputSecret id="password" value="#{register.password}" 
+		validator="#{registerValidator.validatePassword}"  a:placeholder="Enter Password"  styleClass="form-control" >
+		
+		<c:validator validatorId="registerValidator" />
+		</h:inputSecret>
+		<br />
+		<h:message for="password" style="color:red; margin-left:0px; display: inline-block; text-align: left;" />
+	</div>
+
+
+
+
+
+			<h:commandButton value="Update" action="#{register.updateProfileDetails}"
+				style="background:#1095f1;border-radius:2px;padding:6px 30px 6px 36px;
+				font-family:'OpenSansRegular';font-size:15px;text-transform:uppercase;
+				border:none; margin-left:70px;"  />
+
+
+
+		</h:form>
+
+
+
+
+</div>
+ 
+
+
+</h:body>
+</html>

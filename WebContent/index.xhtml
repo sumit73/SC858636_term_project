@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+	
+<h:head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Assignment 2 - Login </title>
+
+		<h:outputStylesheet library="css" name="bootstrap.css"  />
+<h:outputStylesheet library="css" name="main.css"  />
+		
+	
+</h:head>
+
+	
+<h:body>
+
+<div class="container" style="max-width:600px;margin:60px auto;">
+
+	<div> <h3 style="text-align: center;">Sign In  </h3></div>
+
+
+	<h:form id="loginForm" style="box-sizing:border-box">
+	 <div class="form-group">
+	 
+		<h:outputLabel for="loginId"  value="Username" style="width:80px; display: inline-block; text-align: left;" />
+		<h:inputText id="loginId" value="#{login.loginId}" 
+		validator="#{loginValidator.validateLoginId}"  a:placeholder="Username" styleClass="form-control" >
+		 
+		<c:validator validatorId="loginValidator"  required="true" />
+		</h:inputText>
+		<br />
+	<!-- 	<h:message for="loginId" style="color:red" /> -->
+		</div>
+		<br/>
+		
+		
+		<div class="form-group">
+		<h:outputLabel value="Password"  style="width: 80px; display: inline-block; text-align: left;" />
+		<h:inputSecret id="password" value="#{login.password}" 
+		validator="#{loginValidator.validatePassword}"  a:placeholder="Password"  styleClass="form-control" >
+		
+		<c:validator validatorId="loginValidator" />
+		</h:inputSecret>
+		<br />
+		<!-- <h:message for="password" style="color:red" /> -->
+		
+		</div>
+		<br/>
+
+			<h:commandButton value="Login" action="#{login.login}"
+				style="background:#1095f1;border-radius:2px;padding:6px 30px 6px 36px;
+				font-family:'OpenSansRegular';font-size:15px;text-transform:uppercase;
+				border:none; margin-left:70px;"  />
+
+
+ <h:messages style="color:red;margin:8px;" />
+		</h:form>
+
+
+
+<hr/>
+
+
+Don't have an account! <a href="faces/register.xhtml" style="text-decoration: none; color:#1095f1 "> Register Here</a>
+
+</div>
+ 
+
+
+</h:body>
+</html>

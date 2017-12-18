@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Assignment 2 - Login Successfull</title>
+
+	<h:outputStylesheet library="css" name="bootstrap.css" />
+	<h:outputStylesheet library="css" name="main.css" />
+
+<h:outputScript library="js" name="jquery.min.js" />
+<h:outputScript library="js" name="common.js" />
+
+
+</h:head>
+<h:body>
+
+
+	<div class="container">
+
+		<h:form>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-lg-12">
+					<div class="col-md-6 col-sm-6 col-lg-6">
+						Welcome
+						<h:outputLabel value="#{user}"></h:outputLabel>
+					</div>
+					<div class="col-md-6 col-sm-6 col-lg-6"
+						style="text-align: right; margin-right: 0px !important; color: #1095f1">
+					
+					<p style="text-decoration: none; margin-right:10px !important; font-size: 15px"  >
+						 Balance: $ #{currentbalance}
+						 </p>
+					
+					
+						
+						<p style="text-decoration: none; margin-right:10px !important; font-size: 15px"  >
+						Manager : #{selectedmanager}
+						 </p>
+					
+						
+						<h:commandLink action="#{login.updateProfile}"
+							value="update profile"
+							style="text-decoration: none; margin-right:10px !important; font-size: 15px;" />
+						<h:commandLink action="#{login.logout}" value="Logout"
+							style="text-decoration: none;" />
+
+
+
+					</div>
+				</div>
+			</div>
+
+
+
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-lg-12">
+					<div class="col-md-2 col-sm-2 col-lg-2">
+
+						<h:link value="Select Stocks to watch" outcome="stockslist" />
+					</div>
+
+					<div class="col-md-2 col-sm-2 col-lg-2">
+						<h:commandLink action="#{stock.myWatchList}"
+							value="My watch List"
+							style="text-decoration: none; margin-right:10px !important; font-size: 15px;" />
+					</div>
+
+					<div class="col-md-2 col-sm-2 col-lg-2">
+					
+					<h:link value="View History" outcome="viewHistory" />
+								
+					</div>
+
+					<div class="col-md-2 col-sm-2 col-lg-2">
+					
+						<h:link value="View Managers" outcome="viewManagers" />
+					
+						</div>
+
+					<div class="col-md-2 col-sm-2 col-lg-2">
+						<h:commandLink action="#{stock.myOrders}"
+							value="My Account History"
+							style="text-decoration: none; margin-right:10px !important; font-size: 15px;" />
+					</div>
+
+					<div class="col-md-6 col-sm-6 col-lg-6"
+						style="text-align: right; margin-right: 0px !important; color: #1095f1">
+
+
+
+					</div>
+				</div>
+			</div>
+
+		</h:form>
+
+
+
+ 
+	</div>
+
+
+
+</h:body>
+</html>
